@@ -232,7 +232,7 @@ module "autoscaling" {
   for_each = {
     # On-demand instances
     ex_1 = {
-      instance_type              = "t3.large"
+      instance_type              = "t3.medium"
       use_mixed_instances_policy = false
       mixed_instances_policy     = {}
       user_data                  = <<-EOT
@@ -259,11 +259,11 @@ module "autoscaling" {
 
         override = [
           {
-            instance_type     = "m4.large"
+            instance_type     = "m4.medium"
             weighted_capacity = "2"
           },
           {
-            instance_type     = "t3.large"
+            instance_type     = "t3.medium"
             weighted_capacity = "1"
           },
         ]
